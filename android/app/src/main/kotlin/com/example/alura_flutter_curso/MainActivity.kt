@@ -1,4 +1,4 @@
-package com.example.curso_alura_flutter
+package com.example.alura_flutter_curso
 
 import io.flutter.embedding.android.FlutterActivity
 

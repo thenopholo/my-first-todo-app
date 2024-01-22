@@ -1,6 +1,6 @@
-# curso_alura_flutter
+# alura_flutter_curso
 
-Todo App
+A new Flutter project.
 
 ## Getting Started
 
