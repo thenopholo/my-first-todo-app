@@ -91,9 +91,36 @@ class _TaskState extends State<Task> {
                       height: 52,
                       width: 52,
                       child: ElevatedButton(
-                          onLongPress: () {
-                            TaskDao().delete(widget.nome);
-                          },
+                          onLongPress: () => showDialog(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text(
+                                      'Tem certeza que deseja apagar a tarefa?'),
+                                  content: const Text(
+                                      'Essa ação não pode ser desfeita!'),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () {
+                                        TaskDao().delete(widget.nome);
+                                        Navigator.pop(context, 'Sim');
+                                      },
+                                      child: const Text('Sim'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context, 'Não');
+                                      },
+                                      child: const Text('Não'),
+                                    ),
+                                  ],
+                                  elevation: 24.0,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
+                                    ),
+                                  ),
+                                ),
+                              ),
                           onPressed: () {
                             print(widget.nivel);
                             setState(() {
