@@ -1,16 +1,29 @@
-# alura_flutter_curso
+# Flutter TODO App
 
-A new Flutter project.
+This is a TODO app built for a Flutter course from Alura. It allows users to create, manage, and track their tasks.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Initial screen with a FutureBuilder widget that checks the internal database for existing tasks before building the screen.
+- Create tasks with a name, difficulty level, and an optional image.
+- Update the task level as you complete it multiple times.
+- Delete tasks as needed.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+2. Change to the project directory: `cd your-repo`
+3. Install dependencies: `flutter pub get`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
+
+1. Run the app: `flutter run`
+2. Follow the on-screen instructions to create, update, and delete tasks.
+
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
