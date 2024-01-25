@@ -3,11 +3,13 @@ import 'package:nosso_primeiro_projeto/components/difficulty.dart';
 import 'package:nosso_primeiro_projeto/data/task_dao.dart';
 
 class Task extends StatefulWidget {
+  String id;
   final String nome;
   final String foto;
   final int dificuldade;
   int nivel;
   Task(
+    this.id,
     this.nome,
     this.foto,
     this.dificuldade, [

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nosso_primeiro_projeto/components/task.dart';
 import 'package:nosso_primeiro_projeto/data/task_dao.dart';
-import 'package:nosso_primeiro_projeto/data/task_inherited.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({Key? key, required this.taskContext}) : super(key: key);
@@ -13,6 +12,7 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+  TextEditingController idController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
@@ -147,6 +147,7 @@ class _FormScreenState extends State<FormScreen> {
                         // print(imageController.text);
                         TaskDao().save(
                           Task(
+                            idController.text,
                             nameController.text,
                             imageController.text,
                             int.parse(difficultyController.text),
