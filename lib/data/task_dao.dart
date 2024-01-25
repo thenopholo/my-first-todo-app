@@ -88,5 +88,14 @@ class TaskDao {
     return toList(result);
   }
 
-  delete(String nomeDaTarefa) async {}
+  delete(String nomeDaTarefa) async {
+    /// TODO: Remover o print após o teste
+    print('Deletando tarefa: $nomeDaTarefa');
+    final Database database = await getDatabase();
+    return await database.delete(
+      _tablename,
+      where: '$_name = ?',
+      whereArgs: [nomeDaTarefa],
+    );
+  }
 }
