@@ -17,6 +17,14 @@ class _InitialScreenState extends State<InitialScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: Container(),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {});
+            },
+            icon: const Icon(Icons.refresh),
+          ),
+        ],
         title: const Text('Tarefas'),
       ),
       body: Padding(
@@ -35,7 +43,7 @@ class _InitialScreenState extends State<InitialScreen> {
                       ],
                     ),
                   );
-                  break;
+                  
                 case ConnectionState.waiting:
                   return const Center(
                     child: Column(
@@ -45,7 +53,7 @@ class _InitialScreenState extends State<InitialScreen> {
                       ],
                     ),
                   );
-                  break;
+                  
                 case ConnectionState.active:
                   return const Center(
                     child: Column(
@@ -55,7 +63,7 @@ class _InitialScreenState extends State<InitialScreen> {
                       ],
                     ),
                   );
-                  break;
+                  
                 case ConnectionState.done:
                   if (snapshot.hasData && items != null) {
                     if (items.isNotEmpty) {
@@ -84,9 +92,7 @@ class _InitialScreenState extends State<InitialScreen> {
                     );
                   }
                   return const Text('Erro ao carregar tarefas');
-                  break;
               }
-              return const Text('Erro desconhecido');
             }),
       ),
       floatingActionButton: FloatingActionButton(
